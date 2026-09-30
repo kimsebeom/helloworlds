@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김세범 | Digital Resume</title>
+    <style>
+        /* 
+           Color System:
+           Black: #000000
+           Amber: #FFBF00
+           Text White: #FFFFFF
+           Text Gray: #A0A0A0
+        */
+        :root {
+            --black: #000000;
+            --amber: #FFBF00;
+            --text-main: #ffffff;
+            --text-sub: #A0A0A0;
+            --border: #333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Pretendard', -apple-system, sans-serif;
+            background-color: var(--black);
+            color: var(--text-main);
+            line-height: 1.5;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        /* Main Resume Container (2-Column Layout) */
+        .resume-container {
+            display: flex;
+            width: 100%;
+            max-width: 900px;
+            background-color: #121212;
+            min-height: 1200px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 1px solid var(--border);
+        }
+
+        /* Left Column (Sidebar) */
+        .sidebar {
+            width: 35%;
+            background-color: #1a1a1a;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid var(--border);
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            background: var(--amber);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+        .sidebar-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 5px;
+            letter-spacing: -1px;
+        }
+        .sidebar-title {
+            font-size: 0.9rem;
+            color: var(--amber);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 5px;
+        }
+        .sidebar-section { margin-bottom: 35px; }
+        .sidebar-content { font-size: 0.9rem; color: var(--text-sub); }
+        .sidebar-content b { color: var(--text-main); display: block; margin-bottom: 5px; }
+
+        /* Right Column (Main Content) */
+        .main-content {
+            width: 65%;
+            padding: 40px 50px;
+        }
+        .main-section { margin-bottom: 45px; }
+        .main-title {
+            font-size: 1.5rem;
+            color: var(--amber);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .main-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+        .summary-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-main);
+            word-break: keep-all;
+        }
+
+        /* Favorites Section - Added Reason (Requirement) */
+        .hobby-list { list-style: none; }
+        .hobby-item { 
+            margin-bottom: 20px; 
+            padding-bottom: 15px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        .hobby-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+        .hobby-reason {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            line-height: 1.4;
+            display: block;
+        }
+
+        /* Stats & Links */
+        .stats-mini {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .stat-item { text-align: center; background: #262626; padding: 10px; border-radius: 8px; }
+        .stat-val { color: var(--amber); font-weight: 700; font-size: 1rem; display: block; }
+        .stat-lab { font-size: 0.7rem; color: var(--text-sub); }
+
+        .link-btn {
+            display: block;
+            padding: 8px 0;
+            color: var(--text-sub);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+        .link-btn:hover { color: var(--amber); }
+
+        .vision-highlight {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--amber);
+            border-left: 4px solid var(--amber);
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .resume-container { flex-direction: column; }
+            .sidebar, .main-content { width: 100%; }
+            .sidebar { border-right: none; border-bottom: 1px solid var(--border); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        <!-- Left Column -->
+        <aside class="sidebar">
+            <div class="profile-img">💪</div>
+            <h1 class="sidebar-name">김세범</h1>
+            <p style="color: var(--amber); font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 30px;">KIM SE BEOM</p>
+            
+            <div class="sidebar-section">
+                <h2 class="sidebar-title">Contact</h2>
+                <div class="sidebar-content">
+                    <a href="https://www.instagram.com/" target="_blank" class="link-btn">📸 Instagram</a>
+                    <a href="https://music.youtube.com/" target="_blank" class="link-btn">🎵 YouTube Music</a>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h2 class="sidebar-title">Statistics</h2>
+                <div class="stats-mini">
+                    <div class="stat-item"><span class="stat-val">3rd</span><span class="stat-label">Year</span></div>
+                    <div class="stat-item"><span class="stat-val">100+</span><span class="stat-label">Goals</span></div>
+                    <div class="stat-item"><span class="stat-val">TOP</span><span class="stat-label">Rank</span></div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h2 class="sidebar-title">Favorites</h2>
+                <ul class="hobby-list">
+                    <!-- 취미 및 이유 추가 -->
+                    <li class="hobby-item">
+                        <div class="hobby-header"><span>💪</span> 헬스</div>
+                        <span class="hobby-reason">한계를 극복하며 얻는 성취감과 체력 관리를 위해 즐깁니다.</span>
+                    </li>
+                    <li class="hobby-item">
+                        <div class="hobby-header"><span>🎣</span> 낚시</div>
+                        <span class="hobby-reason">복잡한 생각을 비우고 자연 속에서 기다림의 미학을 배웁니다.</span>
+                    </li>
+                    <li class="hobby-item">
+                        <div class="hobby-header"><span>📖</span> 공부</div>
+                        <span class="hobby-reason">새로운 지식을 습득하며 어제보다 더 나은 나를 만듭니다.</span>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Right Column -->
+        <main class="main-content">
+            <section class="main-section">
+                <h2 class="main-title">Professional Summary</h2>
+                <div class="summary-text">
+                    끊임없이 변화하는 시장의 흐름을 읽고,<br>
+                    유통과 마케팅의 접점에서 새로운 가치를 찾습니다.<br>
+                    경영학적 통찰력을 바탕은 혁신을 꿈꾸며,<br>
+                    성공적인 비즈니스 모델을 구축하겠습니다.
+                </div>
+            </section>
+
+            <section class="main-section">
+                <h2 class="main-title">Education & Interest</h2>
+                <div class="sidebar-content" style="color: var(--text-main); font-size: 1.1rem;">
+                    <b style="font-size: 1.3rem;">경영학과 3학년</b>
+                    <p style="color: var(--text-sub); margin-top: 5px;">유통 · 마케팅 · 창업</p>
+                </div>
+            </section>
+
+            <section class="main-section">
+                <h2 class="main-title">Vision</h2>
+                <div class="vision-highlight">
+                    "행복하고 베풀 수 있는 삶을 살기"
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
